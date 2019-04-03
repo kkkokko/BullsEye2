@@ -143,7 +143,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PK-yL-m8f">
-                                                                <rect key="frame" x="74" y="29" width="39" height="21"/>
+                                                                <rect key="frame" x="74" y="29" width="39" height="20"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -195,9 +195,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="roundLabel" destination="0PK-yL-m8f" id="RyQ-Pa-D4A"/>
                         <outlet property="scoreLabel" destination="UzJ-HP-fmH" id="9TN-xI-zKd"/>
                         <outlet property="slider" destination="Bxj-Yv-JG9" id="4iK-5f-RCQ"/>
-                        <outlet property="targetLabel" destination="7CO-en-tG0" id="VIu-Ge-NUj"/>
+                        <outlet property="targetLabel" destination="7CO-en-tG0" id="GCs-Uc-1u0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

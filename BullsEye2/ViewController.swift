@@ -13,11 +13,12 @@ class ViewController: UIViewController {
     var currentValue: Int = 50
     var targetValue = 0
     var score = 0
+    var round = 0
     
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var scoreLabel: UILabel!
-    
     @IBOutlet weak var targetLabel: UILabel!
+    @IBOutlet weak var roundLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +50,7 @@ class ViewController: UIViewController {
         alert.addAction(action)
         
         present(alert, animated: true, completion: nil)
-        updateLabel()
+        startNewRound()
     }
     
     @IBAction func sliderMoved(_ sender: UISlider) {
@@ -57,9 +58,19 @@ class ViewController: UIViewController {
         print(" The value of the slider is now:\(currentValue)")
     }
     
+    func startNewRound(){
+        round += 1
+        targetValue = Int.random(in: 1...100)
+        currentValue = 50
+        slider.value = Float(currentValue)
+        updateLabel()
+        
+    }
+    
     func updateLabel(){
         targetLabel.text = String(targetValue)
         scoreLabel.text = String(score)
+        roundLabel.text = String(round)
     }
 }
 
