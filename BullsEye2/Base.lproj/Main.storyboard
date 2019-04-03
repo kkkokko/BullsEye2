@@ -100,6 +100,9 @@
                                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A7v-Ds-je4">
                                                                 <rect key="frame" x="8" y="23.5" width="71" height="30"/>
                                                                 <state key="normal" title="Start Over"/>
+                                                                <connections>
+                                                                    <action selector="startOver:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Ei-Nv-wE1"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
