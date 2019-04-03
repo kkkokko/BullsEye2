@@ -9,9 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var slider: UISlider!
+    
     var currentValue: Int = 50
+    @IBOutlet weak var slider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +23,9 @@ class ViewController: UIViewController {
     }
   
     @IBAction func showAlert(_ sender: UIButton) {
+        let message = "The value of the slider is:\(currentValue)"
         let alert = UIAlertController(title: "Hello World!",
-                                      message: "This is my first app!",
+                                      message: message,
                                       preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Awesome",
@@ -36,5 +37,9 @@ class ViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func sliderMoved(_ sender: UISlider) {
+        currentValue = lroundf(slider.value)
+        print(" The value of the slider is now:\(currentValue)")
+    }
 }
 
