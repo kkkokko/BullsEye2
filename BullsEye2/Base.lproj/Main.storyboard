@@ -219,13 +219,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ix3-uf-WzO">
-                                <rect key="frame" x="0.0" y="0.0" width="667" height="317"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDX-TL-cTh">
                                 <rect key="frame" x="314" y="325" width="39" height="30"/>
                                 <state key="normal" title="Close"/>
@@ -233,18 +226,29 @@
                                     <action selector="close:" destination="obC-e1-u0F" eventType="touchUpInside" id="NdQ-UG-Nrz"/>
                                 </connections>
                             </button>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rlb-fA-vao">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="317"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bDX-TL-cTh" firstAttribute="centerX" secondItem="tQT-1v-7w5" secondAttribute="centerX" id="Fne-4F-gi3"/>
-                            <constraint firstItem="Ix3-uf-WzO" firstAttribute="top" secondItem="dbw-mL-xtz" secondAttribute="top" id="QMa-6C-k3x"/>
-                            <constraint firstItem="bDX-TL-cTh" firstAttribute="top" secondItem="Ix3-uf-WzO" secondAttribute="bottom" constant="8" id="Wik-vd-G7z"/>
+                            <constraint firstItem="Rlb-fA-vao" firstAttribute="top" secondItem="dbw-mL-xtz" secondAttribute="top" id="QkF-PQ-mt1"/>
+                            <constraint firstItem="bDX-TL-cTh" firstAttribute="top" secondItem="Rlb-fA-vao" secondAttribute="bottom" constant="8" id="Xq0-g5-SjE"/>
+                            <constraint firstItem="dbw-mL-xtz" firstAttribute="trailing" secondItem="Rlb-fA-vao" secondAttribute="trailing" id="dwi-vy-VMh"/>
                             <constraint firstItem="dbw-mL-xtz" firstAttribute="bottom" secondItem="bDX-TL-cTh" secondAttribute="bottom" constant="20" id="iru-hn-I3K"/>
-                            <constraint firstItem="Ix3-uf-WzO" firstAttribute="leading" secondItem="dbw-mL-xtz" secondAttribute="leading" id="mNk-HZ-e2M"/>
-                            <constraint firstItem="dbw-mL-xtz" firstAttribute="trailing" secondItem="Ix3-uf-WzO" secondAttribute="trailing" id="nUa-Zh-0uo"/>
+                            <constraint firstItem="Rlb-fA-vao" firstAttribute="leading" secondItem="dbw-mL-xtz" secondAttribute="leading" id="zVP-Io-ZsF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dbw-mL-xtz"/>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="Rlb-fA-vao" id="Aer-6S-cRl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vL2-Cw-EIA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
